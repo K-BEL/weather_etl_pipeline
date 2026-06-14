@@ -11,6 +11,7 @@ DB_CONFIG = {
     "host": "localhost",
     "database": "postgres"
 }
+DATABASE_URI = "postgresql+psycopg2://@localhost/postgres"
 
 # Logging configuration
 LOG_FILE = "pipeline.log"

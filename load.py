@@ -1,38 +1,48 @@
+# pyrefly: ignore [missing-import]
 import logging
-import psycopg2
+from sqlalchemy import create_engine
+from sqlalchemy.dialects.postgresql import insert
 import config
+from models import Base, WeatherStage
 
 logger = logging.getLogger(__name__)
 
 def load_weather(records):
-    """Inserts records into the local PostgreSQL database."""
+    """Inserts records into the local PostgreSQL database using SQLAlchemy."""
     if not records:
         logger.warning("No records available to load into the database.")
         return
         
-    insert_query = """
-        INSERT INTO weather_stg (city, latitude, longitude, reading_timestamp, temperature_celsius, relative_humidity, wind_speed_kmh)
-        VALUES (%s, %s, %s, %s, %s, %s, %s)
-        ON CONFLICT (city, reading_timestamp) DO NOTHING;
-    """
-    
-    conn = None
-    cur = None
     try:
-        logger.info(f"Connecting to database '{config.DB_CONFIG['database']}' on host '{config.DB_CONFIG['host']}'...")
-        conn = psycopg2.connect(**config.DB_CONFIG)
-        cur = conn.cursor()
+        logger.info("Connecting to database using SQLAlchemy...")
+        engine = create_engine(config.DATABASE_URI)
         
-        cur.executemany(insert_query, records)
-        conn.commit()
-        logger.info(f"Database Load complete. Rows affected: {cur.rowcount}")
+        # Auto-create the table if it doesn't exist
+        Base.metadata.create_all(engine)
         
+        # Map tuple records to dictionaries matching column names
+        data_to_insert = [
+            {
+                "city": r[0],
+                "latitude": r[1],
+                "longitude": r[2],
+                "reading_timestamp": r[3],
+                "temperature_celsius": r[4],
+                "relative_humidity": r[5],
+                "wind_speed_kmh": r[6]
+            }
+            for r in records
+        ]
+        
+        # Build PostgreSQL specific upsert statement
+        stmt = insert(WeatherStage)
+        stmt_on_conflict = stmt.on_conflict_do_nothing(
+            index_elements=["city", "reading_timestamp"]
+        )
+        
+        with engine.begin() as conn:
+            result = conn.execute(stmt_on_conflict, data_to_insert)
+            logger.info(f"Database Load complete. Rows affected: {result.rowcount}")
+            
     except Exception as e:
-        if conn:
-            conn.rollback()
         logger.error(f"Database Load Error: {e}")
-    finally:
-        if cur:
-            cur.close()
-        if conn:
-            conn.close()

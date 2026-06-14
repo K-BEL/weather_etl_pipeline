@@ -6,28 +6,22 @@ echo "============================================="
 echo "Starting Weather ETL Pipeline Setup & Runner"
 echo "============================================="
 
-# 1. Database Setup
-echo "Step 1: Initializing PostgreSQL database schema..."
-if command -v psql &> /dev/null; then
-    psql -d postgres -f schema.sql
-    echo "Database schema initialized successfully."
-else
-    echo "Error: 'psql' client command not found. Please ensure PostgreSQL is installed and in your PATH."
-    exit 1
-fi
-
-# 2. Environment Activation
-echo "Step 2: Activating virtual environment..."
+# 1. Environment Activation
+echo "Step 1: Activating virtual environment..."
 if [ -f "venv/to/venv/bin/activate" ]; then
     source venv/to/venv/bin/activate
 elif [ -f "venv/bin/activate" ]; then
     source venv/bin/activate
-    pip install -r requirements.txt
 else
     echo "Warning: Virtual environment activation script not found. Running with environment's default Python."
 fi
 
+# 2. Install dependencies
+echo "Step 2: Installing dependencies..."
+pip install -r requirements.txt --quiet
+
 # 3. Running Pipeline
+# Note: SQLAlchemy will automatically create the weather_stg table if it does not exist.
 echo "Step 3: Executing ETL script..."
 python3 etl.py
 
