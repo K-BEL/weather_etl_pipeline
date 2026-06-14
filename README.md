@@ -77,7 +77,12 @@ LOG_FILE = "pipeline.log"
 
 ## Running the Pipeline
 
-Execute the pipeline using Python:
+You can set up the database schema and execute the ETL pipeline in a single step using the provided bash script:
+```bash
+./run_pipeline.sh
+```
+
+Or execute it manually using Python:
 ```bash
 python etl.py
 ```

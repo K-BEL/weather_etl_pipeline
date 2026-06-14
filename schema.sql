@@ -1,6 +1,5 @@
-psql postgres
 -- Create a fresh table to hold hourly weather readings
-CREATE TABLE weather_stg (
+CREATE TABLE IF NOT EXISTS weather_stg (
     city VARCHAR(50),
     latitude NUMERIC(6, 4),
     longitude NUMERIC(7, 4),
