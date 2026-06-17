@@ -52,3 +52,97 @@
 2026-06-14 12:43:52,462 [INFO] Connecting to database using SQLAlchemy...
 2026-06-14 12:43:52,521 [INFO] Database Load complete. Rows affected: 0
 2026-06-14 12:43:52,521 [INFO] Weather ETL Pipeline execution completed.
+2026-06-14 17:04:30,319 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-14 17:04:30,319 [INFO] Extracting weather data from Open-Meteo API for coordinates (35.6895, 139.6917)...
+2026-06-14 17:04:30,878 [INFO] Weather data extracted successfully from API.
+2026-06-14 17:04:30,881 [INFO] Transformed 24 hourly records successfully.
+2026-06-14 17:04:30,881 [INFO] Connecting to database using SQLAlchemy...
+2026-06-14 17:04:30,946 [INFO] Database Load complete. Rows affected: 0
+2026-06-14 17:04:30,946 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:11:35,427 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:11:35,427 [INFO] Extracting weather data from Open-Meteo API for coordinates (35.6895, 139.6917)...
+2026-06-17 09:11:36,051 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:11:36,053 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 09:11:36,053 [INFO] Connecting to database using SQLAlchemy...
+2026-06-17 09:11:36,162 [INFO] Database Load complete. Rows affected: 24
+2026-06-17 09:11:36,164 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:23:21,450 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:23:21,451 [INFO] Extracting weather data from Open-Meteo API for coordinates (35.6895, 139.6917)...
+2026-06-17 09:23:22,141 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:23:22,143 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:25:23,699 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:25:23,699 [INFO] Extracting weather data from Open-Meteo API for coordinates (35.6895, 139.6917)...
+2026-06-17 09:25:24,375 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:25:24,378 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:27:36,404 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:27:36,404 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 09:27:36,990 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:27:36,993 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:29:00,275 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:29:00,275 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 09:29:05,528 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:29:05,534 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 09:29:05,534 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:30:29,948 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:30:29,948 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 09:30:30,619 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:30:30,625 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 09:30:30,625 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:31:00,354 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:31:00,354 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 09:31:00,600 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:31:00,605 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 09:31:00,606 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:31:22,180 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:31:22,180 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 09:31:22,430 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:31:22,434 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 09:31:22,435 [INFO] Connecting to database using SQLAlchemy...
+2026-06-17 09:31:22,492 [INFO] Database Load complete. Rows affected: 24
+2026-06-17 09:31:22,493 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:35:14,940 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:35:14,940 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 09:35:15,450 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:35:15,452 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 09:35:15,453 [INFO] Connecting to database using SQLAlchemy...
+2026-06-17 09:35:15,501 [INFO] Database Load complete. Rows affected: 0
+2026-06-17 09:35:15,502 [ERROR] Database Load Error: 'Connection' object has no attribute 'query'
+2026-06-17 09:35:15,502 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:36:24,377 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:36:24,377 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 09:36:24,631 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:36:24,639 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 09:36:24,640 [INFO] Connecting to database using SQLAlchemy...
+2026-06-17 09:36:24,686 [INFO] Database Load complete. Rows affected: 0
+2026-06-17 09:36:24,687 [ERROR] Database Load Error: module 'functools' has no attribute 'count'
+2026-06-17 09:36:24,687 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:52:28,551 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:52:28,552 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 09:52:29,174 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:52:29,179 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 09:52:29,180 [INFO] Connecting to database using SQLAlchemy...
+2026-06-17 09:52:29,240 [INFO] Database Load complete. Rows affected: 0
+2026-06-17 09:52:29,240 [ERROR] Database Load Error: module 'functools' has no attribute 'count'
+2026-06-17 09:52:29,240 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:53:14,537 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:53:14,537 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 09:53:14,790 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:53:14,794 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 09:53:14,794 [INFO] Connecting to database using SQLAlchemy...
+2026-06-17 09:53:14,848 [INFO] Database Load complete. Rows affected: 0
+2026-06-17 09:53:14,849 [ERROR] Database Load Error: Not an executable object: <class 'models.WeatherStage'>
+2026-06-17 09:53:14,849 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 09:53:48,323 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 09:53:48,323 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 09:53:48,959 [INFO] Weather data extracted successfully from API.
+2026-06-17 09:53:48,965 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 09:53:48,966 [INFO] Connecting to database using SQLAlchemy...
+2026-06-17 09:53:49,023 [INFO] Database Load complete. Rows affected: 0
+2026-06-17 09:53:49,023 [INFO] Weather ETL Pipeline execution completed.
+2026-06-17 10:01:35,955 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-17 10:01:35,955 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-17 10:01:36,524 [INFO] Weather data extracted successfully from API.
+2026-06-17 10:01:36,530 [INFO] Transformed 24 hourly records successfully.
+2026-06-17 10:01:36,530 [INFO] Connecting to database using SQLAlchemy...
+2026-06-17 10:01:36,588 [INFO] Database Load complete. Rows affected: 0
+2026-06-17 10:01:36,588 [INFO] Weather ETL Pipeline execution completed.

@@ -24,7 +24,7 @@ def transform_weather(raw_data):
         dt_obj = datetime.strptime(timestamps[i], "%Y-%m-%dT%H:%M")
         
         record = (
-            "Tokyo",
+            "Rabat",
             lat,
             lon,
             dt_obj,

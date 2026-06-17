@@ -1,5 +1,6 @@
 import logging
 import config
+import json
 from extract import extract_weather
 from transform import transform_weather
 from load import load_weather
@@ -20,9 +21,11 @@ if __name__ == "__main__":
     
     # 1. Extract
     raw = extract_weather()
+    # print(json.dumps(raw, indent=4, default=str))
     
     # 2. Transform
     clean_data = transform_weather(raw)
+    print(json.dumps(clean_data, indent=4, default=str))
     
     # 3. Load
     load_weather(clean_data)

@@ -2,8 +2,8 @@
 
 # Open-Meteo API configuration
 API_URL = "https://api.open-meteo.com/v1/forecast"
-LATITUDE = 35.6895
-LONGITUDE = 139.6917
+LATITUDE = 34.0209
+LONGITUDE = -6.8416
 FORECAST_DAYS = 1
 
 # Database connection configuration
