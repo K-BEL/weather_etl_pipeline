@@ -16,7 +16,7 @@ ENV/
 
 # Logs
 *.log
-pipeline.log
+
 
 # OS files
 .DS_Store

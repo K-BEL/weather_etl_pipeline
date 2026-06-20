@@ -28,8 +28,9 @@ def load_weather(records):
                 "longitude": r[2],
                 "reading_timestamp": r[3],
                 "temperature_celsius": r[4],
-                "relative_humidity": r[5],
-                "wind_speed_kmh": r[6]
+                "is_hot": r[5],
+                "relative_humidity": r[6],
+                "wind_speed_kmh": r[7]
             }
             for r in records
         ]

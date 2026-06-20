@@ -146,3 +146,109 @@
 2026-06-17 10:01:36,530 [INFO] Connecting to database using SQLAlchemy...
 2026-06-17 10:01:36,588 [INFO] Database Load complete. Rows affected: 0
 2026-06-17 10:01:36,588 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 12:25:15,063 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 12:25:15,064 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 12:25:16,359 [INFO] Weather data extracted successfully from API.
+2026-06-19 12:25:16,364 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 12:25:16,364 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 12:25:16,474 [INFO] Database Load complete. Rows affected: 24
+2026-06-19 12:25:16,474 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 12:26:12,124 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 12:26:12,124 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 12:26:12,382 [INFO] Weather data extracted successfully from API.
+2026-06-19 12:26:12,386 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 12:26:12,387 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 12:26:12,437 [INFO] Database Load complete. Rows affected: 0
+2026-06-19 12:26:12,437 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 12:26:53,431 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 12:26:53,431 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 12:26:53,665 [INFO] Weather data extracted successfully from API.
+2026-06-19 12:26:53,670 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 12:26:53,671 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 12:26:53,672 [ERROR] Database Load Error: No module named 'psycopg2'
+2026-06-19 12:26:53,672 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 12:27:12,094 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 12:27:12,094 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 12:27:12,341 [INFO] Weather data extracted successfully from API.
+2026-06-19 12:27:12,346 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 12:27:12,346 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 12:27:12,688 [INFO] Database Load complete. Rows affected: 0
+2026-06-19 12:27:12,688 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 12:39:05,643 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 12:39:05,643 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 12:39:05,908 [INFO] Weather data extracted successfully from API.
+2026-06-19 12:39:05,915 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 12:39:05,916 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 12:39:05,990 [INFO] Database Load complete. Rows affected: 24
+2026-06-19 12:39:05,990 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 12:41:45,246 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 12:41:45,246 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 12:41:45,497 [INFO] Weather data extracted successfully from API.
+2026-06-19 12:41:45,503 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 12:41:45,503 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 12:41:45,559 [ERROR] Database Load Error: (psycopg2.errors.UndefinedColumn) column "is_hotreading_timestamp" does not exist
+LINE 1: ...T00:00:00'::timestamp, 21.4, 87, 7.4) ON CONFLICT (city, is_...
+                                                             ^
+
+[SQL: INSERT INTO weather_stg (city, latitude, longitude, reading_timestamp, temperature_celsius, relative_humidity, wind_speed_kmh) VALUES (%(city)s, %(latitude)s, %(longitude)s, %(reading_timestamp)s, %(temperature_celsius)s, %(relative_humidity)s, %(wind_speed_kmh)s) ON CONFLICT (city, is_hotreading_timestamp) DO NOTHING]
+[parameters: [{'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 0, 0), 'temperature_celsius': 21.4, 'relative_humidity': 87, 'wind_speed_kmh': 7.4}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 1, 0), 'temperature_celsius': 21.2, 'relative_humidity': 87, 'wind_speed_kmh': 7.7}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 2, 0), 'temperature_celsius': 21.0, 'relative_humidity': 88, 'wind_speed_kmh': 7.8}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 3, 0), 'temperature_celsius': 20.9, 'relative_humidity': 86, 'wind_speed_kmh': 6.4}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 4, 0), 'temperature_celsius': 21.0, 'relative_humidity': 83, 'wind_speed_kmh': 6.3}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 5, 0), 'temperature_celsius': 21.3, 'relative_humidity': 80, 'wind_speed_kmh': 5.3}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 6, 0), 'temperature_celsius': 21.6, 'relative_humidity': 79, 'wind_speed_kmh': 7.2}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 7, 0), 'temperature_celsius': 22.2, 'relative_humidity': 77, 'wind_speed_kmh': 8.2}  ... displaying 10 of 24 total bound parameter sets ...  {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 22, 0), 'temperature_celsius': 22.8, 'relative_humidity': 86, 'wind_speed_kmh': 6.1}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 23, 0), 'temperature_celsius': 22.5, 'relative_humidity': 89, 'wind_speed_kmh': 8.2}]]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-06-19 12:41:45,559 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 12:42:09,729 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 12:42:09,729 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 12:42:09,986 [INFO] Weather data extracted successfully from API.
+2026-06-19 12:42:09,992 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 12:42:09,993 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 12:42:10,041 [ERROR] Database Load Error: (psycopg2.errors.UndefinedColumn) column "is_hotreading_timestamp" does not exist
+LINE 1: ...T00:00:00'::timestamp, 21.4, 87, 7.4) ON CONFLICT (city, is_...
+                                                             ^
+
+[SQL: INSERT INTO weather_stg (city, latitude, longitude, reading_timestamp, temperature_celsius, relative_humidity, wind_speed_kmh) VALUES (%(city)s, %(latitude)s, %(longitude)s, %(reading_timestamp)s, %(temperature_celsius)s, %(relative_humidity)s, %(wind_speed_kmh)s) ON CONFLICT (city, is_hotreading_timestamp) DO NOTHING]
+[parameters: [{'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 0, 0), 'temperature_celsius': 21.4, 'relative_humidity': 87, 'wind_speed_kmh': 7.4}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 1, 0), 'temperature_celsius': 21.2, 'relative_humidity': 87, 'wind_speed_kmh': 7.7}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 2, 0), 'temperature_celsius': 21.0, 'relative_humidity': 88, 'wind_speed_kmh': 7.8}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 3, 0), 'temperature_celsius': 20.9, 'relative_humidity': 86, 'wind_speed_kmh': 6.4}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 4, 0), 'temperature_celsius': 21.0, 'relative_humidity': 83, 'wind_speed_kmh': 6.3}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 5, 0), 'temperature_celsius': 21.3, 'relative_humidity': 80, 'wind_speed_kmh': 5.3}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 6, 0), 'temperature_celsius': 21.6, 'relative_humidity': 79, 'wind_speed_kmh': 7.2}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 7, 0), 'temperature_celsius': 22.2, 'relative_humidity': 77, 'wind_speed_kmh': 8.2}  ... displaying 10 of 24 total bound parameter sets ...  {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 22, 0), 'temperature_celsius': 22.8, 'relative_humidity': 86, 'wind_speed_kmh': 6.1}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 23, 0), 'temperature_celsius': 22.5, 'relative_humidity': 89, 'wind_speed_kmh': 8.2}]]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-06-19 12:42:10,042 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 12:43:42,664 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 12:43:42,664 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 12:43:42,907 [INFO] Weather data extracted successfully from API.
+2026-06-19 12:43:42,911 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 12:43:42,912 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 12:43:42,951 [ERROR] Database Load Error: (psycopg2.errors.UndefinedColumn) column "is_hot" does not exist
+LINE 1: ...T00:00:00'::timestamp, 21.4, 87, 7.4) ON CONFLICT (city, is_...
+                                                             ^
+
+[SQL: INSERT INTO weather_stg (city, latitude, longitude, reading_timestamp, temperature_celsius, relative_humidity, wind_speed_kmh) VALUES (%(city)s, %(latitude)s, %(longitude)s, %(reading_timestamp)s, %(temperature_celsius)s, %(relative_humidity)s, %(wind_speed_kmh)s) ON CONFLICT (city, is_hot, reading_timestamp) DO NOTHING]
+[parameters: [{'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 0, 0), 'temperature_celsius': 21.4, 'relative_humidity': 87, 'wind_speed_kmh': 7.4}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 1, 0), 'temperature_celsius': 21.2, 'relative_humidity': 87, 'wind_speed_kmh': 7.7}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 2, 0), 'temperature_celsius': 21.0, 'relative_humidity': 88, 'wind_speed_kmh': 7.8}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 3, 0), 'temperature_celsius': 20.9, 'relative_humidity': 86, 'wind_speed_kmh': 6.4}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 4, 0), 'temperature_celsius': 21.0, 'relative_humidity': 83, 'wind_speed_kmh': 6.3}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 5, 0), 'temperature_celsius': 21.3, 'relative_humidity': 80, 'wind_speed_kmh': 5.3}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 6, 0), 'temperature_celsius': 21.6, 'relative_humidity': 79, 'wind_speed_kmh': 7.2}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 7, 0), 'temperature_celsius': 22.2, 'relative_humidity': 77, 'wind_speed_kmh': 8.2}  ... displaying 10 of 24 total bound parameter sets ...  {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 22, 0), 'temperature_celsius': 22.8, 'relative_humidity': 86, 'wind_speed_kmh': 6.1}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 23, 0), 'temperature_celsius': 22.5, 'relative_humidity': 89, 'wind_speed_kmh': 8.2}]]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-06-19 12:43:42,951 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 12:45:47,267 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 12:45:47,267 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 12:45:47,501 [INFO] Weather data extracted successfully from API.
+2026-06-19 12:45:47,506 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 12:45:47,506 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 12:45:47,557 [ERROR] Database Load Error: (psycopg2.errors.InvalidColumnReference) there is no unique or exclusion constraint matching the ON CONFLICT specification
+
+[SQL: INSERT INTO weather_stg (city, latitude, longitude, reading_timestamp, temperature_celsius, is_hot, relative_humidity, wind_speed_kmh) VALUES (%(city)s, %(latitude)s, %(longitude)s, %(reading_timestamp)s, %(temperature_celsius)s, %(is_hot)s, %(relative_humidity)s, %(wind_speed_kmh)s) ON CONFLICT (city, is_hot, reading_timestamp) DO NOTHING]
+[parameters: [{'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 0, 0), 'temperature_celsius': 21.4, 'is_hot': 'cold', 'relative_humidity': 87, 'wind_speed_kmh': 7.4}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 1, 0), 'temperature_celsius': 21.2, 'is_hot': 'cold', 'relative_humidity': 87, 'wind_speed_kmh': 7.7}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 2, 0), 'temperature_celsius': 21.0, 'is_hot': 'cold', 'relative_humidity': 88, 'wind_speed_kmh': 7.8}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 3, 0), 'temperature_celsius': 20.9, 'is_hot': 'cold', 'relative_humidity': 86, 'wind_speed_kmh': 6.4}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 4, 0), 'temperature_celsius': 21.0, 'is_hot': 'cold', 'relative_humidity': 83, 'wind_speed_kmh': 6.3}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 5, 0), 'temperature_celsius': 21.3, 'is_hot': 'cold', 'relative_humidity': 80, 'wind_speed_kmh': 5.3}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 6, 0), 'temperature_celsius': 21.6, 'is_hot': 'cold', 'relative_humidity': 79, 'wind_speed_kmh': 7.2}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 7, 0), 'temperature_celsius': 22.2, 'is_hot': 'cold', 'relative_humidity': 77, 'wind_speed_kmh': 8.2}  ... displaying 10 of 24 total bound parameter sets ...  {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 22, 0), 'temperature_celsius': 22.8, 'is_hot': 'cold', 'relative_humidity': 86, 'wind_speed_kmh': 6.1}, {'city': 'Rabat', 'latitude': 34.0, 'longitude': -6.8125, 'reading_timestamp': datetime.datetime(2026, 6, 19, 23, 0), 'temperature_celsius': 22.5, 'is_hot': 'cold', 'relative_humidity': 89, 'wind_speed_kmh': 8.2}]]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-06-19 12:45:47,557 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 12:51:09,063 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 12:51:09,063 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 12:51:09,288 [INFO] Weather data extracted successfully from API.
+2026-06-19 12:51:09,292 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 12:51:09,293 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 12:51:09,346 [INFO] Database Load complete. Rows affected: 24
+2026-06-19 12:51:09,346 [INFO] Weather ETL Pipeline execution completed.
+2026-06-19 15:45:16,995 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-19 15:45:16,996 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-19 15:45:17,235 [INFO] Weather data extracted successfully from API.
+2026-06-19 15:45:17,240 [INFO] Transformed 24 hourly records successfully.
+2026-06-19 15:45:17,241 [INFO] Connecting to database using SQLAlchemy...
+2026-06-19 15:45:17,287 [INFO] Database Load complete. Rows affected: 0
+2026-06-19 15:45:17,287 [INFO] Weather ETL Pipeline execution completed.
+2026-06-20 10:25:19,457 [INFO] Starting Weather ETL Pipeline execution.
+2026-06-20 10:25:19,457 [INFO] Extracting weather data from Open-Meteo API for coordinates (34.0209, -6.8416)...
+2026-06-20 10:25:19,670 [INFO] Weather data extracted successfully from API.
+2026-06-20 10:25:19,672 [INFO] Transformed 24 hourly records successfully.
+2026-06-20 10:25:19,673 [INFO] Connecting to database using SQLAlchemy...
+2026-06-20 10:25:19,730 [INFO] Database Load complete. Rows affected: 24
+2026-06-20 10:25:19,730 [INFO] Weather ETL Pipeline execution completed.

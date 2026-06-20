@@ -11,6 +11,7 @@ class WeatherStage(Base):
     longitude = Column(Numeric(7, 4))
     reading_timestamp = Column(DateTime, primary_key=True)
     temperature_celsius = Column(Numeric(4, 1))
+    is_hot = Column(String(10))
     relative_humidity = Column(Numeric(3, 0))
     wind_speed_kmh = Column(Numeric(4, 1))
     extracted_at = Column(DateTime, server_default=func.now())

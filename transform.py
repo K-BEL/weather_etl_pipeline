@@ -29,6 +29,7 @@ def transform_weather(raw_data):
             lon,
             dt_obj,
             temps[i],
+            "hot" if temps[i] > 25 else "cold",
             humidities[i],
             winds[i]
         )
