@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # The Database Service
+  postgres:
+    image: postgres:15
+    container_name: weather_db
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: weather_stg
+    ports:
+      - "5432:5432" # Exposes DB to your laptop for DBeaver/psql access
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # The ETL Job Service
+  etl_job:
+    build: .
+    container_name: weather_etl
+    environment:
+      DB_HOST: weather_db
+      DB_NAME: weather_stg
+      DB_USER: root
+      DB_PASS: root
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data: # Persists your data even if you delete the containers

@@ -1,20 +1,20 @@
 import logging
-import config
 import json
 from extract import extract_weather
 from transform import transform_weather
 from load import load_weather
+import psycopg2
 
 # Set up logging to write to both pipeline.log and the console stdout
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler(config.LOG_FILE),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger(__name__)
+
 
 if __name__ == "__main__":
     logger.info("Starting Weather ETL Pipeline execution.")
