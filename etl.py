@@ -2,7 +2,7 @@ import logging, json, psycopg2, pandas as pd
 from config import TAXI_FILE_LIST
 from extract import extract_weather, extract_taxi_parquet
 from transform import transform_weather, transform_taxi_data
-from load import load_weather
+from load import load_weather, load_taxi
 
 # Set up logging to write to both pipeline.log and the console stdout
 logging.basicConfig(
@@ -33,3 +33,6 @@ if __name__ == "__main__":
     
     # 3. Load
     #load_weather(clean_data)
+    load_taxi(taxi_clean)
+    
+    logger.info("Taxi ETL Pipeline execution completed.")

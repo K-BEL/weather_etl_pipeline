@@ -10,13 +10,21 @@ FORECAST_DAYS = 1
 import os
 
 # If DB_HOST is not provided, default to localhost
-db_host = os.getenv("DB_HOST", "localhost")
-db_name = os.getenv("DB_NAME", "weather_stg")
-db_user = os.getenv("DB_USER", "root")
-db_pass = os.getenv("DB_PASS", "root")
+if os.getenv("ENVIRONMENT") == "weather":
+    db_host = os.getenv("DB_HOST", "weather_db")
+    db_name = os.getenv("DB_NAME", "weather_stg")
+    db_user = os.getenv("DB_USER", "root")
+    db_pass = os.getenv("DB_PASS", "root")
+    # Construct the URI dynamically
+    DATABASE_URI = f"postgresql+psycopg2://{db_user}:{db_pass}@{db_host}/{db_name}"
 
-# Construct the URI dynamically
-DATABASE_URI = f"postgresql+psycopg2://{db_user}:{db_pass}@{db_host}/{db_name}"
+else:
+    db_host = os.getenv("DB_HOST", "taxi_db")
+    db_name = os.getenv("DB_NAME", "taxi_stg")
+    db_user = os.getenv("DB_USER", "root")
+    db_pass = os.getenv("DB_PASS", "root")
+    # Construct the URI dynamically
+    DATABASE_URI = f"postgresql+psycopg2://{db_user}:{db_pass}@{db_host}/{db_name}"
 
 # Logging configuration
 LOG_FILE = "pipeline.log"

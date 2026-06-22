@@ -48,22 +48,43 @@ def load_weather(records):
     except Exception as e:
         logger.error(f"Database Load Error: {e}")
 
-def load_taxi(df):
-    if df.empty:
-        logger.warning("No data available to load into the database.")
-        return
 
+def load_taxi(df):
+    """Inserts records into the local PostgreSQL database using SQLAlchemy."""
+    if df.empty:
+        logger.warning("No records available to load into the database.")
+        return
+        
     try:
+        logger.info("Connecting to database using SQLAlchemy...")
         engine = create_engine(config.DATABASE_URI)
         
-        df.to_sql(
-            name='taxi_stage', 
-            con=engine, 
-            if_exists='append', 
-            index=False
+        # Auto-create the table if it doesn't exist
+        Base.metadata.create_all(engine)
+        
+        # Map tuple records to dictionaries matching column names
+        data_to_insert = [
+            {
+                "'VendorID', 'tpep_pickup_datetime', 'tpep_dropoff_datetime',
+       'passenger_count', 'trip_distance', 'RatecodeID', 'store_and_fwd_flag',
+       'PULocationID', 'DOLocationID', 'payment_type', 'fare_amount', 'extra',
+       'mta_tax', 'tip_amount', 'tolls_amount', 'improvement_surcharge',
+       'total_amount', 'congestion_surcharge', 'Airport_fee',
+       'cbd_congestion_fee'": r[0],
+                
+            }
+            for r in records
+        ]
+        
+        # Build PostgreSQL specific upsert statement
+        stmt = insert(WeatherStage)
+        stmt_on_conflict = stmt.on_conflict_do_nothing(
+            index_elements=["city", "reading_timestamp"]
         )
         
-        logger.info(f"Successfully loaded {len(df)} records into taxi_stage.")
-
+        with engine.begin() as conn:
+            result = conn.execute(stmt_on_conflict, data_to_insert)
+            logger.info(f"Database Load complete. Rows affected: {result.rowcount}")
+            
     except Exception as e:
-        logger.error(f"Taxi Load Error: {e}")
+        logger.error(f"Database Load Error: {e}")
