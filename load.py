@@ -47,3 +47,23 @@ def load_weather(records):
             
     except Exception as e:
         logger.error(f"Database Load Error: {e}")
+
+def load_taxi(df):
+    if df.empty:
+        logger.warning("No data available to load into the database.")
+        return
+
+    try:
+        engine = create_engine(config.DATABASE_URI)
+        
+        df.to_sql(
+            name='taxi_stage', 
+            con=engine, 
+            if_exists='append', 
+            index=False
+        )
+        
+        logger.info(f"Successfully loaded {len(df)} records into taxi_stage.")
+
+    except Exception as e:
+        logger.error(f"Taxi Load Error: {e}")

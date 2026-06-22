@@ -1,5 +1,7 @@
 import logging
 from datetime import datetime
+import pandas as pd
+import numpy as np
 
 logger = logging.getLogger(__name__)
 
@@ -37,3 +39,27 @@ def transform_weather(raw_data):
         
     logger.info(f"Transformed {len(transformed_records)} hourly records successfully.")
     return transformed_records
+
+
+def transform_taxi_data(df):
+    if df.empty:
+        logger.warning("No raw data found to transform.")
+        return []
+
+    # 1. Cast Dates
+    df['tpep_pickup_datetime'] = pd.to_datetime(df['tpep_pickup_datetime'])
+    df['tpep_dropoff_datetime'] = pd.to_datetime(df['tpep_dropoff_datetime'])
+    
+    # 2. Clean Metrics
+    # Ensure distance is positive
+    df = df[df['trip_distance'] > 0]
+    
+    # 3. Handle specific Flag columns
+    # Convert 'Y'/'N' to 1/0 for SQL friendliness
+    df['store_and_fwd_flag'] = df['store_and_fwd_flag'].map({'Y': 1, 'N': 0})
+    
+    # 4. Fill NaNs in monetary columns
+    cols = ['fare_amount', 'tip_amount', 'total_amount', 'passenger_count', 'Airport_fee']
+    df[cols] = df[cols].fillna(0)
+    
+    return df

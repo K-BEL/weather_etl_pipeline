@@ -1,3 +1,5 @@
-requests
-psycopg2
+pandas
+pyarrow
+fastparquet
 sqlalchemy
+psycopg2-binary

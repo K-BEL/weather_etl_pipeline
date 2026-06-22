@@ -20,3 +20,8 @@ DATABASE_URI = f"postgresql+psycopg2://{db_user}:{db_pass}@{db_host}/{db_name}"
 
 # Logging configuration
 LOG_FILE = "pipeline.log"
+
+
+# Configuration parameters for Taxi ETL Pipeline
+TAXI_FILE_LIST = [f'dataset/yellow/raw/yellow_tripdata_2026-{month:02d}.parquet' for month in range(1, 5)]
+

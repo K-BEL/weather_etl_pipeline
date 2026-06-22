@@ -1,6 +1,8 @@
 import logging
 import requests
 import config
+import pandas as pd
+from config import TAXI_FILE_LIST
 
 logger = logging.getLogger(__name__)
 
@@ -32,3 +34,12 @@ def extract_weather():
                 "wind_speed_10m": [12.5, 10.2]
             }
         }
+
+
+def extract_taxi_parquet(file_path):
+    # Parquet files are read in one line
+    df = pd.read_parquet(file_path)
+    return df
+
+df = pd.concat([extract_taxi_parquet(file) for file in TAXI_FILE_LIST], ignore_index=True)
+print(df)
